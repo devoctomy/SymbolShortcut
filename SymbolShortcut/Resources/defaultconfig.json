@@ -1,0 +1,12 @@
+{
+  "Shortcuts": [
+    {
+      "IsEnabled": true,
+      "DisplayName": "British Pound Symbol",
+      "Description": "Enable easy creation of British Pound symbol without numeric keypad.",
+      "Key": "D4",
+      "Modifiers": "Shift,Control",
+      "Output": "£"
+    }
+  ]
+}

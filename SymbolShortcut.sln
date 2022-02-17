@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolShortcut", "SymbolShortcut\SymbolShortcut.csproj", "{AB189F18-1EAD-48B9-BC70-90D8553393F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymbolShortcut.Core", "SymbolShortcut.Core\SymbolShortcut.Core.csproj", "{ED0CDBDB-6B46-42D1-901D-8D825DDF8495}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB189F18-1EAD-48B9-BC70-90D8553393F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB189F18-1EAD-48B9-BC70-90D8553393F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB189F18-1EAD-48B9-BC70-90D8553393F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB189F18-1EAD-48B9-BC70-90D8553393F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED0CDBDB-6B46-42D1-901D-8D825DDF8495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED0CDBDB-6B46-42D1-901D-8D825DDF8495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED0CDBDB-6B46-42D1-901D-8D825DDF8495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED0CDBDB-6B46-42D1-901D-8D825DDF8495}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BFE5A6EB-97AA-4600-B235-F644A6CA57C4}
+	EndGlobalSection
+EndGlobal
