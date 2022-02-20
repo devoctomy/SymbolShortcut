@@ -10,6 +10,11 @@ namespace SymbolShortcut.Core.Extensions
             SymbolShortcutConfig config)
         {
             services.AddSingleton(config);
+            var autoStartupServiceConfig = new AutoStartupServiceConfig
+            {
+                AppName = config.AppName
+            };
+            services.AddScoped<IAutoStartupService, AutoStartupService>(s => new AutoStartupService(autoStartupServiceConfig));
             services.AddSingleton<IHotKeyService, HotKeyService>();
         }
     }

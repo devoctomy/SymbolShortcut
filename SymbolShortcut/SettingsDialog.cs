@@ -1,4 +1,5 @@
 ﻿using SymbolShortcut.Core.Extensions;
+using SymbolShortcut.Core.Services;
 using System.ComponentModel;
 
 namespace SymbolShortcut
@@ -9,10 +10,14 @@ namespace SymbolShortcut
         public bool AllowClose { get; set; }
 
         private readonly SymbolShortcutConfig _config;
+        private readonly IAutoStartupService _autoStartupService;
 
-        public SettingsDialog(SymbolShortcutConfig config)
+        public SettingsDialog(
+            SymbolShortcutConfig config,
+            IAutoStartupService autoStartupService)
         {
             _config = config;
+            _autoStartupService = autoStartupService;
             InitializeComponent();
             DisplayShortcuts();
         }
@@ -48,6 +53,7 @@ namespace SymbolShortcut
             base.OnClosing(e);
             AllowVisible = false;
             Visible = false;
+            NotifyIcon.Visible = !AllowClose;
         }
 
         protected override void SetVisibleCore(bool value)
@@ -59,6 +65,25 @@ namespace SymbolShortcut
         {
             AllowClose = true;
             Close();
+        }
+
+        private void NotifyContextMenu_VisibleChanged(object sender, EventArgs e)
+        {
+            startWithWindowsToolStripMenuItem.Checked = _autoStartupService.IsSet;
+        }
+
+        private void startWithWindowsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _autoStartupService.Add();
+            startWithWindowsToolStripMenuItem.Checked = _autoStartupService.IsSet;
+        }
+
+        private void NotifyIcon_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Right)
+            {
+                NotifyContextMenu.Show(System.Windows.Forms.Cursor.Position);
+            }
         }
     }
 }

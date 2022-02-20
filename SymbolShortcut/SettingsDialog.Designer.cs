@@ -34,6 +34,7 @@
             this.ShortcutsCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.startWithWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SettingsPanel.SuspendLayout();
@@ -64,24 +65,34 @@
             this.NotifyIcon.Text = "SymbolShortcut";
             this.NotifyIcon.Visible = true;
             this.NotifyIcon.DoubleClick += new System.EventHandler(this.NotifyIcon_DoubleClick);
+            this.NotifyIcon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon_MouseDown);
             // 
             // NotifyContextMenu
             // 
             this.NotifyContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startWithWindowsToolStripMenuItem,
             this.toolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.NotifyContextMenu.Name = "NotifyContextMenu";
-            this.NotifyContextMenu.Size = new System.Drawing.Size(94, 32);
+            this.NotifyContextMenu.Size = new System.Drawing.Size(179, 54);
+            this.NotifyContextMenu.VisibleChanged += new System.EventHandler(this.NotifyContextMenu_VisibleChanged);
+            // 
+            // startWithWindowsToolStripMenuItem
+            // 
+            this.startWithWindowsToolStripMenuItem.Name = "startWithWindowsToolStripMenuItem";
+            this.startWithWindowsToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.startWithWindowsToolStripMenuItem.Text = "Start With Windows";
+            this.startWithWindowsToolStripMenuItem.Click += new System.EventHandler(this.startWithWindowsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(90, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(175, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -110,5 +121,6 @@
         private ContextMenuStrip NotifyContextMenu;
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem exitToolStripMenuItem;
+        private ToolStripMenuItem startWithWindowsToolStripMenuItem;
     }
 }

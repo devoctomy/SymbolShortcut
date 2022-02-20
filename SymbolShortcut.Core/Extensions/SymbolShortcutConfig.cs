@@ -2,6 +2,7 @@
 {
     public class SymbolShortcutConfig
     {
-        public SymbolShortcut.Core.Services.Shortcut[]? Shortcuts { get; set; }
+        public string? AppName { get; set; }
+        public Services.Shortcut[]? Shortcuts { get; set; }
     }
 }

@@ -22,7 +22,8 @@ namespace SymbolShortcut
             {
                 throw new Exception("Failed to load configuration.");
             }
-            
+
+            config.AppName = "SymbolShortcut";
             services.AddCoreServices(config);
             using ServiceProvider serviceProvider = services.BuildServiceProvider();
             ServiceProvider = serviceProvider;
